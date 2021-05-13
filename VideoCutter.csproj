@@ -1,0 +1,45 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<OutputType>WinExe</OutputType>
+		<TargetFramework>net6.0-windows</TargetFramework>
+		<Nullable>enable</Nullable>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<UseWindowsForms>true</UseWindowsForms>
+		<RootNamespace>VideoCutter</RootNamespace>
+		<Description>透過 FFmpeg 將指定格式的視訊檔案，分割成數個指定時間點的視訊或是音訊檔案。</Description>
+		<Product>影片分割器</Product>
+		<DebugType>embedded</DebugType>
+		<Version>1.1.1</Version>
+		<ApplicationIcon>Resources\app_icon.ico</ApplicationIcon>
+		<IncludeNativeLibrariesForSelfExtract>false</IncludeNativeLibrariesForSelfExtract>
+		<EnableCompressionInSingleFile>false</EnableCompressionInSingleFile>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Xabe.FFmpeg" Version="5.2.0" />
+		<PackageReference Include="Xabe.FFmpeg.Downloader" Version="5.2.0" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<Compile Update="Properties\Resources.Designer.cs">
+			<DesignTime>True</DesignTime>
+			<AutoGen>True</AutoGen>
+			<DependentUpon>Resources.resx</DependentUpon>
+		</Compile>
+	</ItemGroup>
+
+	<ItemGroup>
+		<EmbeddedResource Update="Properties\Resources.resx">
+			<Generator>ResXFileCodeGenerator</Generator>
+			<LastGenOutput>Resources.Designer.cs</LastGenOutput>
+		</EmbeddedResource>
+	</ItemGroup>
+
+	<ItemGroup>
+		<None Update="README.md">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</None>
+	</ItemGroup>
+
+</Project>
